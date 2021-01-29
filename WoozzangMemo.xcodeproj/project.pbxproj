@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		DD243B6125C2CA1300B9F760 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD243B6025C2CA1300B9F760 /* AppDelegate.swift */; };
 		DD243B6325C2CA1300B9F760 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD243B6225C2CA1300B9F760 /* SceneDelegate.swift */; };
-		DD243B6525C2CA1300B9F760 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD243B6425C2CA1300B9F760 /* ViewController.swift */; };
 		DD243B6825C2CA1300B9F760 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD243B6625C2CA1300B9F760 /* Main.storyboard */; };
 		DD243B6B25C2CA1300B9F760 /* WoozzangMemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DD243B6925C2CA1300B9F760 /* WoozzangMemo.xcdatamodeld */; };
 		DD243B6D25C2CA1400B9F760 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD243B6C25C2CA1400B9F760 /* Assets.xcassets */; };
@@ -20,7 +19,6 @@
 		DD243B5D25C2CA1300B9F760 /* WoozzangMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WoozzangMemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD243B6025C2CA1300B9F760 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD243B6225C2CA1300B9F760 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DD243B6425C2CA1300B9F760 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DD243B6725C2CA1300B9F760 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DD243B6A25C2CA1300B9F760 /* WoozzangMemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WoozzangMemo.xcdatamodel; sourceTree = "<group>"; };
 		DD243B6C25C2CA1400B9F760 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -60,7 +58,6 @@
 			children = (
 				DD243B6025C2CA1300B9F760 /* AppDelegate.swift */,
 				DD243B6225C2CA1300B9F760 /* SceneDelegate.swift */,
-				DD243B6425C2CA1300B9F760 /* ViewController.swift */,
 				DD243B6625C2CA1300B9F760 /* Main.storyboard */,
 				DD243B6C25C2CA1400B9F760 /* Assets.xcassets */,
 				DD243B6E25C2CA1400B9F760 /* LaunchScreen.storyboard */,
@@ -140,7 +137,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD243B6525C2CA1300B9F760 /* ViewController.swift in Sources */,
 				DD243B6125C2CA1300B9F760 /* AppDelegate.swift in Sources */,
 				DD243B6B25C2CA1300B9F760 /* WoozzangMemo.xcdatamodeld in Sources */,
 				DD243B6325C2CA1300B9F760 /* SceneDelegate.swift in Sources */,
