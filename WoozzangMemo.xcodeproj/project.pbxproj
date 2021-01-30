@@ -14,6 +14,7 @@
 		DD243B6D25C2CA1400B9F760 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD243B6C25C2CA1400B9F760 /* Assets.xcassets */; };
 		DD243B7025C2CA1400B9F760 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD243B6E25C2CA1400B9F760 /* LaunchScreen.storyboard */; };
 		DDAC027425C5850600073ADB /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAC027325C5850600073ADB /* Model.swift */; };
+		DDAC027725C587D900073ADB /* MemoListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAC027625C587D900073ADB /* MemoListTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		DD243B6F25C2CA1400B9F760 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD243B7125C2CA1400B9F760 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DDAC027325C5850600073ADB /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		DDAC027625C587D900073ADB /* MemoListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				DDAC027225C584E300073ADB /* Model */,
 				DD243B6025C2CA1300B9F760 /* AppDelegate.swift */,
 				DD243B6225C2CA1300B9F760 /* SceneDelegate.swift */,
+				DDAC027625C587D900073ADB /* MemoListTableViewController.swift */,
 				DD243B6625C2CA1300B9F760 /* Main.storyboard */,
 				DD243B6C25C2CA1400B9F760 /* Assets.xcassets */,
 				DD243B6E25C2CA1400B9F760 /* LaunchScreen.storyboard */,
@@ -150,6 +153,7 @@
 			files = (
 				DD243B6125C2CA1300B9F760 /* AppDelegate.swift in Sources */,
 				DD243B6B25C2CA1300B9F760 /* WoozzangMemo.xcdatamodeld in Sources */,
+				DDAC027725C587D900073ADB /* MemoListTableViewController.swift in Sources */,
 				DD243B6325C2CA1300B9F760 /* SceneDelegate.swift in Sources */,
 				DDAC027425C5850600073ADB /* Model.swift in Sources */,
 			);
