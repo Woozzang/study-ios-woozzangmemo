@@ -25,11 +25,13 @@ class MemoListTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
       return Memo.dummyMemoList.count
     }
-
+  
+    // 개별 셀을 화면에 표시할때마다 반복적으로 호출
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+      // 1. 사용할 셀 디자인 가져오기
       let cell = tableView.dequeueReusableCell(withIdentifier: "subtitleCell", for: indexPath)
       
-        // Configure the cell...
+      // 2. 셀 내용 채우기
       let target = Memo.dummyMemoList[indexPath.row]
       
       cell.textLabel?.text = target.content
