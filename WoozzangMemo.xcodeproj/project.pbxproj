@@ -15,6 +15,7 @@
 		DD243B7025C2CA1400B9F760 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD243B6E25C2CA1400B9F760 /* LaunchScreen.storyboard */; };
 		DDAC027425C5850600073ADB /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAC027325C5850600073ADB /* Model.swift */; };
 		DDAC027725C587D900073ADB /* MemoListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAC027625C587D900073ADB /* MemoListTableViewController.swift */; };
+		DDAC027B25C796ED00073ADB /* CreateNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAC027A25C796ED00073ADB /* CreateNoteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		DD243B7125C2CA1400B9F760 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DDAC027325C5850600073ADB /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		DDAC027625C587D900073ADB /* MemoListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListTableViewController.swift; sourceTree = "<group>"; };
+		DDAC027A25C796ED00073ADB /* CreateNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				DD243B6E25C2CA1400B9F760 /* LaunchScreen.storyboard */,
 				DD243B7125C2CA1400B9F760 /* Info.plist */,
 				DD243B6925C2CA1300B9F760 /* WoozzangMemo.xcdatamodeld */,
+				DDAC027A25C796ED00073ADB /* CreateNoteViewController.swift */,
 			);
 			path = WoozzangMemo;
 			sourceTree = "<group>";
@@ -155,6 +158,7 @@
 				DD243B6B25C2CA1300B9F760 /* WoozzangMemo.xcdatamodeld in Sources */,
 				DDAC027725C587D900073ADB /* MemoListTableViewController.swift in Sources */,
 				DD243B6325C2CA1300B9F760 /* SceneDelegate.swift in Sources */,
+				DDAC027B25C796ED00073ADB /* CreateNoteViewController.swift in Sources */,
 				DDAC027425C5850600073ADB /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

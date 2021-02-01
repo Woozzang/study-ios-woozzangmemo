@@ -17,36 +17,37 @@ class MemoListTableViewController: UITableViewController {
     return f
   }()
   
-    override func viewDidLoad() {
-        super.viewDidLoad()
+  override func viewDidLoad() {
+      super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+      // Uncomment the following line to preserve selection between presentations
+      // self.clearsSelectionOnViewWillAppear = false
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-    }
+      // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+      // self.navigationItem.rightBarButtonItem = self.editButtonItem
+  }
 
-    // MARK: - Table view data source
   
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-      return Memo.dummyMemoList.count
-    }
-  
-    // 개별 셀을 화면에 표시할때마다 반복적으로 호출
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      // 1. 사용할 셀 디자인 가져오기
-      let cell = tableView.dequeueReusableCell(withIdentifier: "subtitleCell", for: indexPath)
-      
-      // 2. 셀 내용 채우기
-      let target = Memo.dummyMemoList[indexPath.row]
-      
-      cell.textLabel?.text = target.content
-      cell.detailTextLabel?.text = formatter.string(from:target.insertDate)
+  // MARK: - Table view data source
 
-      return cell
-    }
+  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+      // #warning Incomplete implementation, return the number of rows
+    return Memo.dummyMemoList.count
+  }
+
+  // 개별 셀을 화면에 표시할때마다 반복적으로 호출
+  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    // 1. 사용할 셀 디자인 가져오기
+    let cell = tableView.dequeueReusableCell(withIdentifier: "subtitleCell", for: indexPath)
+    
+    // 2. 셀 내용 채우기
+    let target = Memo.dummyMemoList[indexPath.row]
+    
+    cell.textLabel?.text = target.content
+    cell.detailTextLabel?.text = formatter.string(from:target.insertDate)
+
+    return cell
+  }
 
     /*
     // Override to support conditional editing of the table view.
