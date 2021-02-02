@@ -17,16 +17,32 @@ class MemoListTableViewController: UITableViewController {
     return f
   }()
   
+  //Notication.default.addObserver 의 반환 타입이 Optional 이 아닌데 옵셔널 타입으로 받는 이유
+  // 기존 타입으로 받으면 initializer 를 구현해야 한다
+  // token이 런타임에 할당된다
+  
+  var token: NSObjectProtocol?
+  
   override func viewDidLoad() {
-      super.viewDidLoad()
-
+    super.viewDidLoad()
+    
+    token = NotificationCenter.default.addObserver(forName: CreateNoteViewController.newMemoDisInsert, object: nil, queue: OperationQueue.main) { [weak self] (noti) in
+      self?.tableView.reloadData()
+    }
+    
+  //    print(#function)
       // Uncomment the following line to preserve selection between presentations
       // self.clearsSelectionOnViewWillAppear = false
 
       // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
       // self.navigationItem.rightBarButtonItem = self.editButtonItem
   }
-
+  
+  deinit {
+    if let token = token {
+      NotificationCenter.default.removeObserver(token)
+    }
+  }
   
   // MARK: - Table view data source
 

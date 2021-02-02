@@ -86,9 +86,20 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="새 메모" id="tY0-Gr-EQq">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="f5e-UA-eDg"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="RvU-VJ-ewO"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="f5e-UA-eDg">
+                            <connections>
+                                <action selector="cancle:" destination="KgX-bt-Shn" id="nXN-4Y-czE"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="RvU-VJ-ewO">
+                            <connections>
+                                <action selector="save:" destination="KgX-bt-Shn" id="odt-3y-4oq"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="memoTextView" destination="09K-vA-oH9" id="XPh-OM-m4i"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GsN-rk-hOQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
