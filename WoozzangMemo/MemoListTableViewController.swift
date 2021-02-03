@@ -43,9 +43,17 @@ class MemoListTableViewController: UITableViewController {
       NotificationCenter.default.removeObserver(token)
     }
   }
+  // MARK: - Segue
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell) {
+      if let vc = segue.destination as? DetailViewController {
+        vc.memo = Memo.dummyMemoList[indexPath.row]
+      }
+    }
+  }
+  
   
   // MARK: - Table view data source
-
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
       // #warning Incomplete implementation, return the number of rows
     return Memo.dummyMemoList.count
