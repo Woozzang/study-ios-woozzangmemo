@@ -18,6 +18,7 @@
 		DDAC027B25C796ED00073ADB /* CreateNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAC027A25C796ED00073ADB /* CreateNoteViewController.swift */; };
 		DDAC028025C8C30F00073ADB /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAC027F25C8C30F00073ADB /* UIViewController+Alert.swift */; };
 		DDAC028425CAD84200073ADB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAC028325CAD84200073ADB /* DetailViewController.swift */; };
+		DDE975D025CBF84C002EE560 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE975CF25CBF84C002EE560 /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		DDAC027A25C796ED00073ADB /* CreateNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteViewController.swift; sourceTree = "<group>"; };
 		DDAC027F25C8C30F00073ADB /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		DDAC028325CAD84200073ADB /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		DDE975CF25CBF84C002EE560 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 		DD243B5F25C2CA1300B9F760 /* WoozzangMemo */ = {
 			isa = PBXGroup;
 			children = (
+				DDE975CE25CBF838002EE560 /* Data */,
 				DDAC027225C584E300073ADB /* Model */,
 				DD243B6025C2CA1300B9F760 /* AppDelegate.swift */,
 				DD243B6225C2CA1300B9F760 /* SceneDelegate.swift */,
@@ -88,6 +91,14 @@
 				DDAC027325C5850600073ADB /* Model.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		DDE975CE25CBF838002EE560 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				DDE975CF25CBF84C002EE560 /* DataManager.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,6 +178,7 @@
 				DDAC027B25C796ED00073ADB /* CreateNoteViewController.swift in Sources */,
 				DDAC027425C5850600073ADB /* Model.swift in Sources */,
 				DDAC028025C8C30F00073ADB /* UIViewController+Alert.swift in Sources */,
+				DDE975D025CBF84C002EE560 /* DataManager.swift in Sources */,
 				DDAC028425CAD84200073ADB /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
