@@ -27,7 +27,10 @@ class CreateNoteViewController: UIViewController {
       return
       
     }
+    
 //    Memo.dummyMemoList.append(Memo(content: text))
+    
+    DataManager.shared.addNewMemo(text)
     
     NotificationCenter.default.post(name: CreateNoteViewController.newMemoDisInsert, object: nil)
     

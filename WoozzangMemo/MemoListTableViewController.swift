@@ -50,6 +50,7 @@ class MemoListTableViewController: UITableViewController {
     DataManager.shared.fetchMemo()
     tableView.reloadData()
   }
+  
   // MARK: - Segue
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell) {
