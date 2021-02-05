@@ -10,6 +10,8 @@ import UIKit
 class DetailViewController: UIViewController {
   
   var memo: Memo?
+  @IBOutlet weak var memoTableView: UITableView!
+  var token: NSObjectProtocol?
   
   let formatter: DateFormatter = {
     let f = DateFormatter()
@@ -19,9 +21,25 @@ class DetailViewController: UIViewController {
     return f
   }()
   
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if let vc = segue.destination.children.first as? CreateNoteViewController {
+      vc.editTarget = memo
+    }
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-      // Do any additional setup after loading the view.
+    
+    token = NotificationCenter.default.addObserver(forName: CreateNoteViewController.memoDidEdit, object: nil, queue: OperationQueue.main) { [weak self] (noti) in
+      self?.memoTableView.reloadData()
+    }
+    // Do any additional setup after loading the view.
+  }
+  
+  deinit {
+    if let token = token {
+      NotificationCenter.default.removeObserver(token)
+    }
   }
   
 
@@ -65,6 +83,4 @@ extension DetailViewController: UITableViewDataSource {
       fatalError()
     }
   }
-  
-  
 }
