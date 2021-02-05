@@ -10,6 +10,7 @@ import UIKit
 class CreateNoteViewController: UIViewController {
   
   var editTarget: Memo?
+  var originalMemoContent: String?
   
   @IBOutlet weak var memoTextView: UITextView!
   
@@ -19,12 +20,28 @@ class CreateNoteViewController: UIViewController {
     if let memo = editTarget {
       navigationItem.title = "Edit memo"
       memoTextView.text = memo.content
+      originalMemoContent = memo.content
     } else {
       navigationItem.title = "New memo"
     }
     
+    memoTextView.delegate = self
     // Do any additional setup after loading the view.
   }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    
+    navigationController?.presentationController?.delegate = self
+  }
+  
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    
+    navigationController?.presentationController?.delegate = nil
+  }
+
+  
   // MARK: - IBAction
   @IBAction func cancle(_ sender: Any) {
     dismiss(animated: true, completion: nil)
@@ -60,6 +77,37 @@ class CreateNoteViewController: UIViewController {
   }
   */
 
+}
+
+extension CreateNoteViewController: UITextViewDelegate {
+  /* 텍스트뷰를 편집할 때마다 반복적으로 호출*/
+  func textViewDidChange(_ textView: UITextView) {
+    if let original = originalMemoContent, let edited = textView.text {
+      isModalInPresentation = original != edited
+    }
+  }
+}
+
+extension CreateNoteViewController: UIAdaptivePresentationControllerDelegate {
+  func presentationControllerDidAttemptToDismiss(_ presentationController: UIPresentationController) {
+    let alert = UIAlertController(title: "알림", message: "편집한 내용을 저장할까요?", preferredStyle: .alert)
+    
+    let okAction = UIAlertAction(title: "확인", style: .default) { [weak self] (action) in
+      self?.save(action)
+    }
+    alert.addAction(okAction)
+    
+    let cancleAction = UIAlertAction(title: "취소", style: .cancel) { [weak self] (action) in
+      self?.cancle(action)
+    }
+    alert.addAction(cancleAction)
+    
+    present(alert, animated: true, completion: nil)
+  }
+  
+  func presentationControllerWillDismiss(_ presentationController: UIPresentationController) {
+    print(#function)
+  }
 }
 
 extension CreateNoteViewController {
