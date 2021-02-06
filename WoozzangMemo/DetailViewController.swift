@@ -42,7 +42,19 @@ class DetailViewController: UIViewController {
     }
   }
   
-
+  // MARK: IBActions
+  @IBAction func deleteMemo(_ sender: Any) {
+    let alert = UIAlertController(title: "경고", message: "정말 삭제하시겠습니까?", preferredStyle: .alert)
+    
+    let okAction = UIAlertAction(title: "삭제", style: .destructive, handler: nil)
+    alert.addAction(okAction)
+    
+    let cancleAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+    alert.addAction(cancleAction)
+    
+    self.present(alert, animated: true, completion: nil)
+  }
+  
   /*
   // MARK: - Navigation
 
