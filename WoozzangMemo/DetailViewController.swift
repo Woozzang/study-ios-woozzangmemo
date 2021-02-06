@@ -46,7 +46,12 @@ class DetailViewController: UIViewController {
   @IBAction func deleteMemo(_ sender: Any) {
     let alert = UIAlertController(title: "경고", message: "정말 삭제하시겠습니까?", preferredStyle: .alert)
     
-    let okAction = UIAlertAction(title: "삭제", style: .destructive, handler: nil)
+    let okAction = UIAlertAction(title: "삭제", style: .destructive) { [weak self] (action) in
+      DataManager.shared.deleteMemo(self?.memo)
+      
+      // 여기에서는 navigation controller 가 transition 을 담당하고 있기 때문이다.
+      self?.navigationController?.popViewController(animated: true)
+    }
     alert.addAction(okAction)
     
     let cancleAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
