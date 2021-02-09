@@ -14,6 +14,19 @@ class CreateNoteViewController: UIViewController {
   
   @IBOutlet weak var memoTextView: UITextView!
   
+  var willShowToken: NSObjectProtocol?
+  var willHideToken: NSObjectProtocol?
+  
+  deinit {
+    if let token = willShowToken {
+      NotificationCenter.default.removeObserver(token)
+    }
+    
+    if let token = willHideToken {
+      NotificationCenter.default.removeObserver(token)
+    }
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -27,17 +40,39 @@ class CreateNoteViewController: UIViewController {
     
     memoTextView.delegate = self
     // Do any additional setup after loading the view.
+    
+    willShowToken = NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: OperationQueue.main, using: { [weak self] (noti) in
+      guard let strongSelf = self else { return }
+      if let frame = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+        let height = frame.cgRectValue.height
+        
+        strongSelf.memoTextView.contentInset.bottom = height
+        
+        strongSelf.memoTextView.verticalScrollIndicatorInsets.bottom = height
+      }
+    })
+    
+    willHideToken = NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: OperationQueue.main ,using: { [weak self] (noti) in
+      guard let strongSelf = self else { return }
+      
+      strongSelf.memoTextView.contentInset.bottom = 0
+      
+      strongSelf.memoTextView.verticalScrollIndicatorInsets.bottom = 0
+      
+    })
   }
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     
+    memoTextView.becomeFirstResponder()
     navigationController?.presentationController?.delegate = self
   }
   
   override func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
     
+    memoTextView.resignFirstResponder()
     navigationController?.presentationController?.delegate = nil
   }
 
