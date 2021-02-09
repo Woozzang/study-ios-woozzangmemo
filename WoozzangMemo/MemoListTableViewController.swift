@@ -60,18 +60,19 @@ class MemoListTableViewController: UITableViewController {
     }
   }
   
-  
   // MARK: - Table view data source
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      // #warning Incomplete implementation, return the number of rows
+    
+    // #warning Incomplete implementation, return the number of rows
     return DataManager.shared.memoList.count
   }
 
   // 개별 셀을 화면에 표시할때마다 반복적으로 호출
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
     // 1. 사용할 셀 디자인 가져오기
     let cell = tableView.dequeueReusableCell(withIdentifier: "subtitleCell", for: indexPath)
-    
+
     // 2. 셀 내용 채우기
     let target = DataManager.shared.memoList[indexPath.row]
     
@@ -99,7 +100,7 @@ class MemoListTableViewController: UITableViewController {
         let target = DataManager.shared.memoList[indexPath.row]
         
         DataManager.shared.deleteMemo(target)
-        DataManager.shared.memoList.remove(at: indexPath.row)
+//        DataManager.shared.memoList.remove(at: indexPath.row)
         
         tableView.deleteRows(at: [indexPath], with: .fade)
         
